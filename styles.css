@@ -920,6 +920,7 @@ body {
 
 .pricing-features li::before {
     content: '✓';
+    margin-left:-18px;
     position: absolute;
     left: 0;
     color: #ff6b35;
