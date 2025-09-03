@@ -249,10 +249,30 @@ body {
     margin-bottom: 40px;
 }
 
+/* Hero CTA Buttons - Fixed Shake Issue */
 .hero-cta .cta-button {
     font-size: 1.3rem;
     padding: 20px 45px;
     margin: 0 15px 15px 0;
+    display: inline-block;
+}
+
+.hero-cta .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+}
+
+/* Responsive adjustments for proven badge */
+@media (max-width: 768px) {
+    .proven-badge {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+    
+    .badge-icon {
+        align-self: center;
+    }
 }
 
 /* Features Section with Map Background */
