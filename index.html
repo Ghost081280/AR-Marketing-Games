@@ -324,7 +324,7 @@
                     <li>Real-time analytics & performance dashboard</li>
                     <li>Cross-platform compatibility (iOS, Android)</li>
                     <li>Desktop promotion site for campaigns (included)</li>
-                    <li>Offering Cloud hosting, security, & maintenance</li>
+                    <li>Cloud hosting, security, & maintenance included</li>
                     <li>Client training & comprehensive support package</li>
                     <li>Campaign optimization tools & A/B testing</li>
                     <li>White-label deployment & customization</li>
@@ -379,7 +379,7 @@
     <section class="final-cta" id="contact">
         <div class="container">
             <h2 class="final-cta-title scroll-reveal">Ready to Dominate Location-Based Marketing?</h2>
-            <p class="final-cta-subtitle scroll-reveal">Join the AR marketing revolution.</p>
+            <p class="final-cta-subtitle scroll-reveal">Join the AR marketing revolution. Your competitors don't know this technology exists yet - but they will soon. Be first to market.</p>
             
             <div class="cta-buttons scroll-reveal">
                 <a href="mailto:Andrew@ghost081280.com?subject=AR Marketing Game Development Inquiry&body=I'm interested in developing a custom AR marketing game for my clients. Please send me detailed information about the development process, timeline, and how we can get started." class="cta-primary">
@@ -600,49 +600,73 @@
             });
         });
 
-        // Enhanced mobile menu functionality
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
+        // Enhanced mobile menu functionality - FIXED VERSION
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
 
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
-                navLinks.classList.toggle('mobile-active');
-                if (navLinks.classList.contains('mobile-active')) {
-                    mobileMenuBtn.innerHTML = '✕';
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    mobileMenuBtn.innerHTML = '☰';
-                    document.body.style.overflow = '';
-                }
-            });
+            console.log('Mobile menu elements:', { mobileMenuBtn, navLinks }); // Debug log
 
-            // Close mobile menu when clicking on a nav link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('mobile-active');
-                    mobileMenuBtn.innerHTML = '☰';
-                    document.body.style.overflow = '';
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    console.log('Mobile menu clicked!'); // Debug log
+                    
+                    navLinks.classList.toggle('mobile-active');
+                    
+                    if (navLinks.classList.contains('mobile-active')) {
+                        mobileMenuBtn.innerHTML = '✕';
+                        mobileMenuBtn.style.fontSize = '2.5rem';
+                        document.body.style.overflow = 'hidden';
+                        console.log('Menu opened'); // Debug log
+                    } else {
+                        mobileMenuBtn.innerHTML = '☰';
+                        mobileMenuBtn.style.fontSize = '1.8rem';
+                        document.body.style.overflow = '';
+                        console.log('Menu closed'); // Debug log
+                    }
                 });
-            });
 
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!mobileMenuBtn.contains(e.target) && !navLinks.contains(e.target)) {
-                    navLinks.classList.remove('mobile-active');
-                    mobileMenuBtn.innerHTML = '☰';
-                    document.body.style.overflow = '';
-                }
-            });
+                // Close mobile menu when clicking on a nav link
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('mobile-active');
+                        mobileMenuBtn.innerHTML = '☰';
+                        mobileMenuBtn.style.fontSize = '1.8rem';
+                        document.body.style.overflow = '';
+                        console.log('Menu closed via nav link'); // Debug log
+                    });
+                });
 
-            // Close mobile menu on escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && navLinks.classList.contains('mobile-active')) {
-                    navLinks.classList.remove('mobile-active');
-                    mobileMenuBtn.innerHTML = '☰';
-                    document.body.style.overflow = '';
-                }
-            });
-        }
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileMenuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+                        if (navLinks.classList.contains('mobile-active')) {
+                            navLinks.classList.remove('mobile-active');
+                            mobileMenuBtn.innerHTML = '☰';
+                            mobileMenuBtn.style.fontSize = '1.8rem';
+                            document.body.style.overflow = '';
+                            console.log('Menu closed via outside click'); // Debug log
+                        }
+                    }
+                });
+
+                // Close mobile menu on escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && navLinks.classList.contains('mobile-active')) {
+                        navLinks.classList.remove('mobile-active');
+                        mobileMenuBtn.innerHTML = '☰';
+                        mobileMenuBtn.style.fontSize = '1.8rem';
+                        document.body.style.overflow = '';
+                        console.log('Menu closed via escape key'); // Debug log
+                    }
+                });
+            } else {
+                console.error('Mobile menu elements not found!', { mobileMenuBtn, navLinks });
+            }
+        });
 
         // Enhanced form validation and UX
         document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
