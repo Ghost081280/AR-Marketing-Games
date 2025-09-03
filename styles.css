@@ -113,6 +113,7 @@ body {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     padding: 10px 0;
+    display: inline-block;
 }
 
 .nav-links a:hover {
@@ -136,6 +137,7 @@ body {
     width: 100%;
 }
 
+/* Enhanced CTA Button - Fixed Shake Issue */
 .cta-button {
     background: linear-gradient(135deg, #ff6b35, #f59e0b);
     color: white;
@@ -149,6 +151,7 @@ body {
     box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
     position: relative;
     overflow: hidden;
+    display: inline-block;
 }
 
 .cta-button::before {
@@ -159,7 +162,7 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
+    transition: left 0.5s ease;
 }
 
 .cta-button:hover::before {
@@ -167,8 +170,24 @@ body {
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+}
+
+.secondary-button {
+    background: transparent !important;
+    border: 3px solid white !important;
+    color: white !important;
+}
+
+.secondary-button:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: white !important;
 }
 
 .hero-content {
@@ -203,19 +222,31 @@ body {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.hero-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+/* Hero Process Section */
+.hero-process {
     margin: 50px 0;
-    max-width: 1000px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.stat {
+.process-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ff6b35;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.step {
     background: rgba(255, 255, 255, 0.15);
-    padding: 30px 20px;
+    padding: 25px;
     border-radius: 20px;
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -223,14 +254,14 @@ body {
     text-align: center;
 }
 
-.stat:hover {
+.step:hover {
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
-.stat-number {
-    font-size: 3rem;
+.step-number {
+    font-size: 2rem;
     font-weight: 900;
     color: #ff6b35;
     display: block;
@@ -238,7 +269,7 @@ body {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.stat-label {
+.step-label {
     font-size: 1rem;
     color: #ffffff;
     font-weight: 600;
@@ -260,19 +291,6 @@ body {
 .hero-cta .cta-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
-}
-
-/* Responsive adjustments for proven badge */
-@media (max-width: 768px) {
-    .proven-badge {
-        flex-direction: column;
-        text-align: center;
-        padding: 25px;
-    }
-    
-    .badge-icon {
-        align-self: center;
-    }
 }
 
 /* Features Section with Map Background */
@@ -332,6 +350,58 @@ body {
     margin-left: auto;
     margin-right: auto;
     font-weight: 500;
+}
+
+/* Proven Model Section */
+.proven-model {
+    margin-bottom: 60px;
+}
+
+.proven-badge {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 20px;
+    padding: 35px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 107, 53, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.proven-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b35, #f59e0b, #ff6b35);
+}
+
+.badge-icon {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #ff6b35, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    flex-shrink: 0;
+}
+
+.badge-content h4 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #1a202c;
+    margin-bottom: 10px;
+}
+
+.badge-content p {
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 1rem;
 }
 
 .features-grid {
@@ -597,6 +667,7 @@ body {
     margin-top: 50px;
 }
 
+/* Showcase Stats - Fixed White Text */
 .showcase-stat {
     text-align: center;
     padding: 25px;
@@ -611,11 +682,75 @@ body {
     font-weight: 900;
     display: block;
     margin-bottom: 8px;
+    color: white !important;
 }
 
 .showcase-stat .stat-label {
     font-size: 0.95rem;
     opacity: 0.95;
+    font-weight: 600;
+    color: white !important;
+}
+
+/* Demo Highlight Section */
+.demo-highlight {
+    margin-top: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 35px;
+    border: 2px solid rgba(255, 107, 53, 0.3);
+    text-align: center;
+}
+
+.demo-cta h4 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ff6b35;
+    margin-bottom: 15px;
+}
+
+.demo-cta p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.demo-button {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #ff6b35, #f59e0b);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+    border: 2px solid transparent;
+}
+
+.demo-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 60px rgba(255, 107, 53, 0.5);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.demo-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.demo-text {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.demo-subtext {
+    font-size: 0.9rem;
+    opacity: 0.9;
     font-weight: 600;
 }
 
@@ -790,6 +925,15 @@ body {
     color: #ff6b35;
     font-weight: bold;
     font-size: 1.3rem;
+}
+
+/* Development Story Section */
+.development-story {
+    background: rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 107, 53, 0.2);
 }
 
 .revenue-model {
@@ -986,6 +1130,32 @@ body {
 
 .mobile-menu-btn:hover {
     color: #ff6b35;
+}
+
+/* Responsive adjustments for proven badge */
+@media (max-width: 768px) {
+    .proven-badge {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+    
+    .badge-icon {
+        align-self: center;
+    }
+    
+    .demo-highlight {
+        padding: 25px;
+    }
+    
+    .demo-button {
+        padding: 15px 30px;
+    }
+    
+    .process-steps {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
 
 /* Responsive Design */
