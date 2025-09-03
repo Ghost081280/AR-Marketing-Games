@@ -1686,6 +1686,18 @@ body {
         left: 25px;
         top: 20px;
         font-size: 1.2rem;
+        color: #ff6b35;
+        font-weight: 900;
+        line-height: 1.2;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 107, 53, 0.15);
+        border-radius: 50%;
+        border: 2px solid #ff6b35;
+        flex-shrink: 0;
     }
 
     .revenue-example {
