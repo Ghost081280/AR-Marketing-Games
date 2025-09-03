@@ -16,20 +16,23 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #1a202c;
+            color: #ffffff;
             overflow-x: hidden;
             background: #ffffff;
         }
 
-        /* Enhanced Hero Section */
+        /* Enhanced Hero Section with Better Background */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 25%, #ec4899 50%, #f59e0b 75%, #ef4444 100%);
+            background: 
+                linear-gradient(rgba(26, 32, 44, 0.85), rgba(45, 55, 72, 0.85)),
+                url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            padding-top: 100px;
         }
 
         .hero::before {
@@ -40,9 +43,9 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(196, 181, 253, 0.3) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(79, 70, 229, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(236, 72, 153, 0.2) 0%, transparent 50%);
             animation: gradientFloat 20s ease-in-out infinite;
         }
 
@@ -190,24 +193,22 @@
             font-size: clamp(3rem, 6vw, 5rem);
             font-weight: 900;
             margin-bottom: 30px;
-            background: linear-gradient(45deg, #ffffff, #ff6b35, #f59e0b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffffff;
             line-height: 1.1;
             letter-spacing: -0.02em;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
 
         .hero-subtitle {
             font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-            margin-bottom: 40px;
-            opacity: 0.95;
+            margin-bottom: 50px;
+            color: rgba(255, 255, 255, 0.95);
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
             font-weight: 500;
             line-height: 1.4;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .hero-stats {
@@ -233,7 +234,7 @@
         .stat:hover {
             transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
         .stat-number {
@@ -247,12 +248,13 @@
 
         .stat-label {
             font-size: 1rem;
-            opacity: 0.9;
+            color: #ffffff;
             font-weight: 600;
         }
 
         .hero-cta {
-            margin-top: 50px;
+            margin-top: 60px;
+            margin-bottom: 40px;
         }
 
         .hero-cta .cta-button {
@@ -261,10 +263,12 @@
             margin: 0 15px 15px 0;
         }
 
-        /* Features Section */
+        /* Features Section with City Background */
         .features {
             padding: 120px 40px;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            background: 
+                linear-gradient(rgba(248, 250, 252, 0.95), rgba(248, 250, 252, 0.95)),
+                url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&auto=format&fit=crop&w=2044&q=80') center/cover;
             position: relative;
         }
 
@@ -275,7 +279,7 @@
             left: 0;
             right: 0;
             height: 100px;
-            background: linear-gradient(to bottom, rgba(79, 70, 229, 0.1), transparent);
+            background: linear-gradient(to bottom, rgba(26, 32, 44, 0.1), transparent);
         }
 
         .container {
@@ -311,14 +315,15 @@
         }
 
         .feature-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             padding: 50px;
             border-radius: 25px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid rgba(255, 107, 53, 0.1);
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(10px);
         }
 
         .feature-card::before {
@@ -333,7 +338,7 @@
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
         }
 
         .feature-icon {
@@ -357,7 +362,7 @@
             font-size: 1.05rem;
         }
 
-        /* NEW App Showcase Section */
+        /* App Showcase Section with Dark Background */
         .app-showcase {
             padding: 120px 40px;
             background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
@@ -376,6 +381,11 @@
             background: 
                 radial-gradient(circle at 20% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(79, 70, 229, 0.1) 0%, transparent 50%);
+        }
+
+        .app-showcase .section-title,
+        .app-showcase .section-subtitle {
+            color: #ffffff;
         }
 
         .showcase-content {
@@ -548,7 +558,7 @@
         }
 
         .highlight-content p {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.9);
             font-size: 1rem;
             line-height: 1.6;
         }
@@ -582,10 +592,12 @@
             font-weight: 600;
         }
 
-        /* Use Cases Section */
+        /* Use Cases Section with People Playing Background */
         .use-cases {
             padding: 120px 40px;
-            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%);
+            background: 
+                linear-gradient(rgba(79, 70, 229, 0.9), rgba(124, 58, 237, 0.9)),
+                url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
             color: white;
             position: relative;
             overflow: hidden;
@@ -604,6 +616,11 @@
         .use-cases .container {
             position: relative;
             z-index: 10;
+        }
+
+        .use-cases .section-title,
+        .use-cases .section-subtitle {
+            color: #ffffff;
         }
 
         .use-cases-grid {
@@ -638,39 +655,49 @@
             font-size: 1.4rem;
             font-weight: 800;
             margin-bottom: 18px;
+            color: #ffffff;
         }
 
         .use-case-example {
             font-style: italic;
-            opacity: 0.9;
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 18px;
             font-size: 1rem;
             font-weight: 500;
         }
 
         .use-case-description {
-            opacity: 0.85;
+            color: rgba(255, 255, 255, 0.85);
             line-height: 1.6;
             font-size: 1rem;
         }
 
-        /* Pricing Section */
+        /* Pricing Section with Modern City Background */
         .pricing {
             padding: 120px 40px;
-            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            background: 
+                linear-gradient(rgba(26, 32, 44, 0.9), rgba(45, 55, 72, 0.9)),
+                url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
             color: white;
+        }
+
+        .pricing .section-title,
+        .pricing .section-subtitle {
+            color: #ffffff;
         }
 
         .pricing-card {
             max-width: 700px;
             margin: 80px auto 0;
-            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
             padding: 60px;
             border-radius: 30px;
             text-align: center;
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .pricing-card::before {
@@ -705,10 +732,11 @@
             font-size: 4.5rem;
             font-weight: 900;
             margin-bottom: 15px;
+            color: #ffffff;
         }
 
         .pricing-period {
-            opacity: 0.9;
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 35px;
             font-size: 1.2rem;
             font-weight: 500;
@@ -729,6 +757,7 @@
             position: relative;
             padding-left: 35px;
             font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .pricing-features li::before {
@@ -746,6 +775,7 @@
             border-radius: 20px;
             margin-top: 80px;
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .revenue-title {
@@ -779,7 +809,7 @@
 
         .revenue-label {
             font-size: 1rem;
-            opacity: 0.9;
+            color: rgba(255, 255, 255, 0.9);
             margin-top: 8px;
             font-weight: 600;
         }
@@ -895,7 +925,7 @@
         }
 
         .footer-text {
-            opacity: 0.8;
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 25px;
             font-size: 1.1rem;
         }
@@ -967,6 +997,10 @@
                 display: block;
             }
 
+            .hero {
+                padding-top: 80px;
+            }
+
             .hero-content {
                 padding: 0 20px;
             }
@@ -1031,6 +1065,10 @@
         @media (max-width: 480px) {
             .navbar {
                 padding: 15px;
+            }
+
+            .hero {
+                padding-top: 60px;
             }
 
             .hero-content {
@@ -1112,11 +1150,11 @@
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#showcase">Live Demo</a></li>
-                <li><a href="#use-cases">Use Cases</a></li>
+                <li><a href="#use-cases">Ideas</a></li>
                 <li><a href="#pricing">Investment</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://github.com/Ghost081280" target="_blank">Contact</a></li>
             </ul>
-            <a href="#contact" class="cta-button">Get Started</a>
+            <a href="https://github.com/Ghost081280" target="_blank" class="cta-button">Get Started</a>
             <button class="mobile-menu-btn">☰</button>
         </div>
     </nav>
@@ -1147,7 +1185,7 @@
             </div>
             
             <div class="hero-cta fade-in stagger-3">
-                <a href="#contact" class="cta-button">Launch Your AR Campaign</a>
+                <a href="mailto:Andrew@ghost081280.com?subject=AR Marketing Campaign Launch&body=I'm interested in launching an AR marketing campaign for my clients. Let's discuss the possibilities!" class="cta-button">Launch Your AR Campaign</a>
                 <a href="#pricing" class="cta-button" style="background: transparent; border: 3px solid white;">See Investment</a>
             </div>
         </div>
@@ -1210,35 +1248,31 @@
                     <div class="phone-mockup">
                         <div class="phone-frame">
                             <div class="phone-screen">
-                                <img id="mainScreenshot" src="images/IMG_4384.jpg" alt="AR Marketing Game Screenshot">
+                                <img id="mainScreenshot" src="images/IMG_4379.jpg" alt="AR Marketing Game Screenshot">
                             </div>
                         </div>
                     </div>
                     
                     <div class="thumbnail-grid">
-                        <div class="simple-thumb active" onclick="changeImage('images/IMG_4384.jpg', 'Professional Login Experience')">
-                            <img src="images/IMG_4384.jpg" alt="Login Screen">
-                            <div class="thumb-label">Login</div>
-                        </div>
-                        <div class="simple-thumb" onclick="changeImage('images/IMG_4383.jpg', 'Gamified Dashboard & Navigation')">
-                            <img src="images/IMG_4383.jpg" alt="Dashboard">
-                            <div class="thumb-label">Dashboard</div>
-                        </div>
-                        <div class="simple-thumb" onclick="changeImage('images/IMG_4382.jpg', 'Location-Based Map Hunt')">
-                            <img src="images/IMG_4382.jpg" alt="Map View">
-                            <div class="thumb-label">Map Hunt</div>
-                        </div>
-                        <div class="simple-thumb" onclick="changeImage('images/IMG_4381.jpg', 'AR Camera Hunt Mode')">
-                            <img src="images/IMG_4381.jpg" alt="AR Mode">
-                            <div class="thumb-label">AR Hunt</div>
+                        <div class="simple-thumb active" onclick="changeImage('images/IMG_4379.jpg', 'Collection Progress Tracking')">
+                            <img src="images/IMG_4379.jpg" alt="Collection Screen">
+                            <div class="thumb-label">Collection</div>
                         </div>
                         <div class="simple-thumb" onclick="changeImage('images/IMG_4380.jpg', 'Exciting Card Discovery')">
                             <img src="images/IMG_4380.jpg" alt="Card Discovery">
                             <div class="thumb-label">Discovery</div>
                         </div>
-                        <div class="simple-thumb" onclick="changeImage('images/IMG_4379.jpg', 'Collection Progress Tracking')">
-                            <img src="images/IMG_4379.jpg" alt="Collection Album">
-                            <div class="thumb-label">Collection</div>
+                        <div class="simple-thumb" onclick="changeImage('images/IMG_4383.jpg', 'Gamified Dashboard & Navigation')">
+                            <img src="images/IMG_4383.jpg" alt="Dashboard">
+                            <div class="thumb-label">Dashboard</div>
+                        </div>
+                        <div class="simple-thumb" onclick="changeImage('images/IMG_4381.jpg', 'AR Camera Hunt Mode')">
+                            <img src="images/IMG_4381.jpg" alt="AR Mode">
+                            <div class="thumb-label">AR Hunt</div>
+                        </div>
+                        <div class="simple-thumb" onclick="changeImage('images/IMG_4382.jpg', 'Location-Based Map Hunt')">
+                            <img src="images/IMG_4382.jpg" alt="Map View">
+                            <div class="thumb-label">Map Hunt</div>
                         </div>
                         <div class="simple-thumb" onclick="changeImage('images/IMG_4378.jpg', 'Real-World Navigation')">
                             <img src="images/IMG_4378.jpg" alt="Navigation">
@@ -1252,11 +1286,15 @@
                             <img src="images/IMG_4376.jpg" alt="Advanced Features">
                             <div class="thumb-label">Features</div>
                         </div>
+                        <div class="simple-thumb" onclick="changeImage('images/IMG_4384.jpg', 'Professional Login Experience')">
+                            <img src="images/IMG_4384.jpg" alt="Login Screen">
+                            <div class="thumb-label">Login</div>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="showcase-features">
-                    <h3 class="showcase-title" id="showcaseTitle">Professional Login Experience</h3>
+                    <h3 class="showcase-title" id="showcaseTitle">Collection Progress Tracking</h3>
                     <div class="feature-highlights">
                         <div class="highlight-item scroll-reveal stagger-1">
                             <div class="highlight-icon">🎨</div>
@@ -1310,7 +1348,7 @@
     <!-- Use Cases Section -->
     <section class="use-cases" id="use-cases">
         <div class="container">
-            <h2 class="section-title scroll-reveal">Proven Success Across Industries</h2>
+            <h2 class="section-title scroll-reveal">Ideas Across Industries</h2>
             <p class="section-subtitle scroll-reveal">See how different industries are using AR marketing games to revolutionize customer engagement and drive measurable ROI.</p>
             
             <div class="use-cases-grid">
@@ -1355,6 +1393,27 @@
                     <p class="use-case-example">"Foodie Explorer Trail" - Discover rare ingredients, chef secrets, and exclusive tastings at participating restaurants and local markets</p>
                     <p class="use-case-description">Create food trail experiences that introduce customers to new restaurants and local producers. Each location offers unique AR content, special menu items, and dining promotions that drive repeat visits.</p>
                 </div>
+
+                <div class="use-case-card scroll-reveal stagger-3">
+                    <span class="use-case-icon">🏥</span>
+                    <h3 class="use-case-title">Healthcare Awareness Campaigns</h3>
+                    <p class="use-case-example">"Wellness Journey Quest" - Collect health tips, fitness challenges, and wellness rewards at gyms, health food stores, and medical centers</p>
+                    <p class="use-case-description">Promote healthy living through gamification. Participants visit participating health-focused businesses while learning about wellness, creating a community-wide health initiative that drives business to healthcare providers.</p>
+                </div>
+
+                <div class="use-case-card scroll-reveal stagger-4">
+                    <span class="use-case-icon">🎓</span>
+                    <h3 class="use-case-title">Educational Institution Marketing</h3>
+                    <p class="use-case-example">"Campus Discovery Challenge" - Find virtual academic achievements, alumni stories, and scholarship opportunities throughout campus and partner locations</p>
+                    <p class="use-case-description">Engage prospective students and families through interactive campus tours. Participants discover program highlights while local businesses near campus benefit from increased foot traffic during orientation periods.</p>
+                </div>
+
+                <div class="use-case-card scroll-reveal stagger-1">
+                    <span class="use-case-icon">🚗</span>
+                    <h3 class="use-case-title">Automotive Experience Tours</h3>
+                    <p class="use-case-example">"Drive & Discover Rally" - Collect virtual car features, test drive rewards, and exclusive deals at dealerships, service centers, and automotive retailers</p>
+                    <p class="use-case-description">Transform car shopping into an exciting adventure. Customers visit multiple locations in the automotive ecosystem, learning about vehicles while discovering financing options, accessories, and services.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1383,12 +1442,12 @@
                     <li>Integration with existing marketing platforms</li>
                 </ul>
                 
-                <a href="#contact" class="cta-primary">Start Your AR Empire Today</a>
+                <a href="mailto:Andrew@ghost081280.com?subject=AR Marketing Investment Inquiry&body=I'm interested in the $7,500 AR marketing solution. Please send me detailed information about the development process and timeline." class="cta-primary">Start Your AR Empire Today</a>
             </div>
             
             <div class="revenue-model scroll-reveal">
                 <h3 class="revenue-title">💰 Your Exponential Revenue Model</h3>
-                <p style="text-align: center; margin-bottom: 30px; opacity: 0.95; font-size: 1.1rem;">
+                <p style="text-align: center; margin-bottom: 30px; color: rgba(255, 255, 255, 0.95); font-size: 1.1rem;">
                     Sell location sponsorships to local businesses. Each AR location becomes premium virtual real estate that drives guaranteed, measurable foot traffic and customer engagement.
                 </p>
                 
@@ -1413,8 +1472,8 @@
                 
                 <div style="margin-top: 35px; padding: 25px; background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(245, 158, 11, 0.2)); border-radius: 15px; text-align: center; border: 1px solid rgba(255, 107, 53, 0.3);">
                     <strong style="font-size: 1.1rem; color: #ff6b35;">Real Example:</strong><br><br>
-                    A 50-location city campaign at $500/month per location generates <strong style="color: #ff6b35;">$25,000/month</strong> recurring revenue. 
-                    Your $7,500 investment pays back in under 2 weeks, then generates <strong style="color: #ff6b35;">pure profit scaling infinitely</strong> as you add more locations and campaigns.
+                    <span style="color: rgba(255, 255, 255, 0.9);">A 50-location city campaign at $500/month per location generates</span> <strong style="color: #ff6b35;">$25,000/month</strong> <span style="color: rgba(255, 255, 255, 0.9);">recurring revenue. 
+                    Your $7,500 investment pays back in under 2 weeks, then generates</span> <strong style="color: #ff6b35;">pure profit scaling infinitely</strong> <span style="color: rgba(255, 255, 255, 0.9);">as you add more locations and campaigns.</span>
                 </div>
             </div>
         </div>
@@ -1427,22 +1486,22 @@
             <p class="final-cta-subtitle scroll-reveal">Join the AR marketing revolution. Your competitors don't know this technology exists yet - but they will soon. Be first to market.</p>
             
             <div class="cta-buttons scroll-reveal">
-                <a href="mailto:ghost081280@example.com?subject=AR Marketing Game Development Inquiry&body=I'm interested in developing a custom AR marketing game for my clients. Please send me detailed information about the development process, timeline, and how we can get started." class="cta-primary">
-                    📧 Get Complete Proposal & Case Studies
+                <a href="mailto:Andrew@ghost081280.com?subject=AR Marketing Game Development Inquiry&body=I'm interested in developing a custom AR marketing game for my clients. Please send me detailed information about the development process, timeline, and how we can get started." class="cta-primary">
+                    📧 Email Andrew Directly
                 </a>
-                <a href="tel:+1234567890" class="cta-secondary">
-                    📞 Schedule Live Demo Call
+                <a href="tel:+19493574416" class="cta-secondary">
+                    📞 Call (949) 357-4416
                 </a>
             </div>
             
             <div style="margin-top: 50px; padding: 35px; background: rgba(0, 0, 0, 0.3); border-radius: 20px; max-width: 700px; margin-left: auto; margin-right: auto; backdrop-filter: blur(10px);">
                 <h4 style="margin-bottom: 20px; color: #fff; font-size: 1.3rem; font-weight: 800;">🚀 What Happens Next:</h4>
-                <div style="text-align: left; opacity: 0.95; line-height: 2; font-size: 1.05rem;">
-                    ✓ <strong>Discovery Call:</strong> We analyze your client's brand, target audience, and campaign goals<br>
-                    ✓ <strong>Custom Design:</strong> Receive detailed AR game concept and mockups within 48 hours<br>
-                    ✓ <strong>Rapid Development:</strong> 2-week development, testing, and optimization process<br>
-                    ✓ <strong>Launch Support:</strong> Full deployment with marketing materials and client training<br>
-                    ✓ <strong>Revenue Generation:</strong> Start selling location sponsorships and generating ROI from day one
+                <div style="text-align: left; color: rgba(255, 255, 255, 0.95); line-height: 2; font-size: 1.05rem;">
+                    ✓ <strong style="color: #ffffff;">Discovery Call:</strong> We analyze your client's brand, target audience, and campaign goals<br>
+                    ✓ <strong style="color: #ffffff;">Custom Design:</strong> Receive detailed AR game concept and mockups within 48 hours<br>
+                    ✓ <strong style="color: #ffffff;">Rapid Development:</strong> 2-week development, testing, and optimization process<br>
+                    ✓ <strong style="color: #ffffff;">Launch Support:</strong> Full deployment with marketing materials and client training<br>
+                    ✓ <strong style="color: #ffffff;">Revenue Generation:</strong> Start selling location sponsorships and generating ROI from day one
                 </div>
             </div>
         </div>
@@ -1455,290 +1514,12 @@
                 <span>👻</span>
                 <span>Ghost081280 - AR Marketing Solutions</span>
             </div>
-            <p class="footer-text">Transforming marketing campaigns into addictive gaming experiences that drive real business results since 2023.</p>
+            <p class="footer-text">Transforming marketing campaigns into addictive gaming experiences that drive real business results.</p>
             <div class="footer-links">
                 <a href="#features">Features</a>
                 <a href="#showcase">Live Demo</a>
-                <a href="#use-cases">Use Cases</a>
+                <a href="#use-cases">Ideas</a>
                 <a href="#pricing">Investment</a>
-                <a href="mailto:ghost081280@example.com">Contact</a>
+                <a href="https://github.com/Ghost081280" target="_blank">Contact</a>
             </div>
-            <p style="opacity: 0.6; font-size: 1rem; margin-top: 20px;">© 2024 Ghost081280. All rights reserved. AR Marketing Games that actually work and generate ROI.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Enhanced gallery function with better UI feedback
-        function changeImage(imageSrc, title) {
-            const mainImg = document.getElementById('mainScreenshot');
-            const showcaseTitle = document.getElementById('showcaseTitle');
-            const thumbs = document.querySelectorAll('.simple-thumb');
-            
-            if (mainImg) {
-                mainImg.style.opacity = '0.7';
-                setTimeout(() => {
-                    mainImg.src = imageSrc;
-                    mainImg.style.opacity = '1';
-                }, 150);
-            }
-            
-            if (showcaseTitle) {
-                showcaseTitle.textContent = title;
-            }
-            
-            // Update active states with smooth transitions
-            thumbs.forEach(thumb => {
-                thumb.classList.remove('active');
-            });
-            
-            // Find and activate clicked thumb
-            thumbs.forEach(thumb => {
-                if (thumb.getAttribute('onclick') && thumb.getAttribute('onclick').includes(imageSrc)) {
-                    thumb.classList.add('active');
-                }
-            });
-        }
-
-        // Enhanced navbar scroll effect
-        let lastScrollTop = 0;
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (scrollTop > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-            
-            lastScrollTop = scrollTop;
-        });
-
-        // Enhanced scroll reveal animation with stagger
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -80px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('revealed');
-                    }, index * 100);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.scroll-reveal').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Smooth scrolling with offset for fixed navbar
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 100;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Enhanced interactive card effects
-        document.querySelectorAll('.feature-card, .use-case-card, .simple-thumb').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = this.classList.contains('simple-thumb') 
-                    ? 'translateY(-5px) scale(1.05)' 
-                    : 'translateY(-10px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                if (!this.classList.contains('active')) {
-                    this.style.transform = 'translateY(0) scale(1)';
-                }
-            });
-        });
-
-        // Enhanced stats animation with more realistic counting
-        function animateStats() {
-            const stats = document.querySelectorAll('.stat-number, .revenue-number');
-            stats.forEach(stat => {
-                const finalValue = stat.textContent;
-                const numericValue = parseInt(finalValue.replace(/\D/g, ''));
-                
-                if (numericValue && numericValue > 0) {
-                    let currentValue = 0;
-                    const duration = 2000;
-                    const increment = numericValue / (duration / 50);
-                    
-                    const timer = setInterval(() => {
-                        currentValue += increment;
-                        if (currentValue >= numericValue) {
-                            stat.textContent = finalValue;
-                            clearInterval(timer);
-                        } else {
-                            const displayValue = Math.floor(currentValue);
-                            const suffix = finalValue.replace(/[\d,]/g, '');
-                            stat.textContent = displayValue.toLocaleString() + suffix;
-                        }
-                    }, 50);
-                }
-            });
-        }
-
-        // Trigger stats animation when visible
-        const heroObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setTimeout(animateStats, 500);
-                    heroObserver.disconnect();
-                }
-            });
-        });
-
-        const heroSection = document.querySelector('.hero');
-        if (heroSection) {
-            heroObserver.observe(heroSection);
-        }
-
-        // Auto-rotate gallery showcase
-        let currentImageIndex = 0;
-        const imageRotation = [
-            { src: 'images/IMG_4384.jpg', title: 'Professional Login Experience' },
-            { src: 'images/IMG_4383.jpg', title: 'Gamified Dashboard & Navigation' },
-            { src: 'images/IMG_4382.jpg', title: 'Location-Based Map Hunt' },
-            { src: 'images/IMG_4381.jpg', title: 'AR Camera Hunt Mode' },
-            { src: 'images/IMG_4380.jpg', title: 'Exciting Card Discovery' },
-            { src: 'images/IMG_4379.jpg', title: 'Collection Progress Tracking' }
-        ];
-
-        function autoRotateGallery() {
-            const showcaseSection = document.getElementById('showcase');
-            if (!showcaseSection) return;
-            
-            const rect = showcaseSection.getBoundingClientRect();
-            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-            
-            if (isVisible) {
-                currentImageIndex = (currentImageIndex + 1) % imageRotation.length;
-                const currentImage = imageRotation[currentImageIndex];
-                changeImage(currentImage.src, currentImage.title);
-            }
-        }
-
-        // Start auto-rotation after page load
-        setTimeout(() => {
-            setInterval(autoRotateGallery, 4000);
-        }, 3000);
-
-        // Pause auto-rotation when user interacts with thumbnails
-        document.querySelectorAll('.simple-thumb').forEach(thumb => {
-            thumb.addEventListener('click', () => {
-                clearInterval(autoRotateGallery);
-                setTimeout(() => {
-                    setInterval(autoRotateGallery, 4000);
-                }, 15000); // Resume after 15 seconds
-            });
-        });
-
-        // Enhanced mobile menu functionality
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
-                if (navLinks.style.display === 'flex') {
-                    navLinks.style.display = 'none';
-                    mobileMenuBtn.innerHTML = '☰';
-                } else {
-                    navLinks.style.display = 'flex';
-                    navLinks.style.flexDirection = 'column';
-                    navLinks.style.position = 'absolute';
-                    navLinks.style.top = '100%';
-                    navLinks.style.left = '0';
-                    navLinks.style.right = '0';
-                    navLinks.style.backgroundColor = 'rgba(26, 32, 44, 0.98)';
-                    navLinks.style.padding = '20px';
-                    navLinks.style.borderTop = '1px solid rgba(255, 107, 53, 0.2)';
-                    mobileMenuBtn.innerHTML = '✕';
-                }
-            });
-        }
-
-        // Performance optimization: Lazy load images
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    if (img.dataset.src) {
-                        img.src = img.dataset.src;
-                        img.removeAttribute('data-src');
-                        imageObserver.unobserve(img);
-                    }
-                }
-            });
-        });
-
-        // Observe all images with data-src
-        document.querySelectorAll('img[data-src]').forEach(img => {
-            imageObserver.observe(img);
-        });
-
-        // Add subtle parallax effect to hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.hero::before');
-            const rate = scrolled * -0.5;
-            
-            if (parallax) {
-                parallax.style.transform = `translateY(${rate}px)`;
-            }
-        });
-
-        // Enhanced form validation and UX
-        document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                // Add click tracking or analytics here
-                console.log('Email CTA clicked');
-            });
-        });
-
-        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                // Add click tracking or analytics here
-                console.log('Phone CTA clicked');
-            });
-        });
-
-        // Add loading states for better UX
-        window.addEventListener('load', () => {
-            document.body.classList.add('loaded');
-            
-            // Trigger initial animations
-            setTimeout(() => {
-                document.querySelectorAll('.fade-in').forEach((el, index) => {
-                    setTimeout(() => {
-                        el.style.opacity = '1';
-                        el.style.transform = 'translateY(0)';
-                    }, index * 100);
-                });
-            }, 500);
-        });
-
-        // Add error handling for images
-        document.querySelectorAll('img').forEach(img => {
-            img.addEventListener('error', function() {
-                this.style.display = 'none';
-                console.warn('Image failed to load:', this.src);
-            });
-        });
-
-        console.log('🚀 AR Marketing Games - Landing page loaded successfully!');
-    </script>
-</body>
-</html>
+            <p style="opacity: 0.6; font-size: 1rem; margin-top: 20px;">© 2025 Ghost081280. All rights reserved. AR Marketing Games that actually work and generate ROI.</p>
