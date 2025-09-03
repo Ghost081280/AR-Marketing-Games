@@ -1007,98 +1007,29 @@
     </footer>
 
     <script>
-        // Gallery functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const thumbnails = document.querySelectorAll('.thumbnail');
-            const mainScreenshot = document.getElementById('mainScreenshot');
-            const showcaseTitle = document.getElementById('showcaseTitle');
+        // Simple gallery function
+        function changeImage(imageSrc) {
+            const mainImg = document.getElementById('mainScreenshot');
+            const thumbs = document.querySelectorAll('.simple-thumb');
             
-            // Check if elements exist before proceeding
-            if (!thumbnails.length || !mainScreenshot || !showcaseTitle) {
-                console.log('Gallery elements not found, skipping gallery functionality');
-                return;
+            if (mainImg) {
+                mainImg.src = imageSrc;
             }
             
-            // Screen descriptions for dynamic content
-            const screenDescriptions = {
-                'images/IMG_4384.jpg': 'Professional Login Experience',
-                'images/IMG_4383.jpg': 'Gamified Dashboard & Navigation',
-                'images/IMG_4382.jpg': 'Location-Based Map View',
-                'images/IMG_4381.jpg': 'AR Camera Hunt Mode',
-                'images/IMG_4380.jpg': 'Exciting Card Discovery',
-                'images/IMG_4379.jpg': 'Collection Progress Tracking',
-                'images/IMG_4378.jpg': 'Real-World Navigation Integration',
-                'images/IMG_4377.jpg': 'User Menu & Profile System',
-                'images/IMG_4376.jpg': 'Advanced Feature Set'
-            };
-            
-            // Add click handlers to thumbnails
-            thumbnails.forEach(thumbnail => {
-                thumbnail.addEventListener('click', function() {
-                    try {
-                        // Remove active class from all thumbnails
-                        thumbnails.forEach(t => t.classList.remove('active'));
-                        
-                        // Add active class to clicked thumbnail
-                        this.classList.add('active');
-                        
-                        // Update main screenshot
-                        const newImage = this.dataset.image;
-                        const newTitle = screenDescriptions[newImage] || this.dataset.title || 'AR Marketing Feature';
-                        
-                        if (mainScreenshot) {
-                            mainScreenshot.classList.add('changing');
-                            mainScreenshot.src = newImage;
-                        }
-                        
-                        if (showcaseTitle) {
-                            showcaseTitle.textContent = newTitle;
-                        }
-                        
-                        // Remove animation class after animation completes
-                        setTimeout(() => {
-                            if (mainScreenshot) {
-                                mainScreenshot.classList.remove('changing');
-                            }
-                        }, 500);
-                    } catch (error) {
-                        console.error('Error in thumbnail click handler:', error);
-                    }
-                });
+            // Update active states
+            thumbs.forEach(thumb => {
+                thumb.style.borderColor = 'transparent';
+                thumb.classList.remove('active');
             });
             
-            // Auto-rotate gallery every 6 seconds (increased interval for better UX)
-            let currentIndex = 0;
-            let autoRotateInterval;
-            
-            function startAutoRotate() {
-                autoRotateInterval = setInterval(() => {
-                    try {
-                        if (thumbnails.length > 0) {
-                            currentIndex = (currentIndex + 1) % thumbnails.length;
-                            const nextThumbnail = thumbnails[currentIndex];
-                            if (nextThumbnail) {
-                                nextThumbnail.click();
-                            }
-                        }
-                    } catch (error) {
-                        console.error('Error in auto-rotate:', error);
-                        clearInterval(autoRotateInterval);
-                    }
-                }, 6000);
-            }
-            
-            // Start auto-rotation after a brief delay
-            setTimeout(startAutoRotate, 2000);
-            
-            // Pause auto-rotation when user interacts
-            thumbnails.forEach(thumbnail => {
-                thumbnail.addEventListener('click', function() {
-                    clearInterval(autoRotateInterval);
-                    setTimeout(startAutoRotate, 10000); // Restart after 10 seconds
-                });
+            // Find and activate clicked thumb
+            thumbs.forEach(thumb => {
+                if (thumb.getAttribute('onclick') && thumb.getAttribute('onclick').includes(imageSrc)) {
+                    thumb.style.borderColor = '#667eea';
+                    thumb.classList.add('active');
+                }
             });
-        });
+        }
 
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
