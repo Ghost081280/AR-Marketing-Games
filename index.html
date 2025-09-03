@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AR Marketing Games - Drive Customers to Any Location</title>
     <meta name="description" content="Revolutionary location-based AR marketing games that drive customers to precise locations. Turn any marketing campaign into an engaging treasure hunt.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👻</text></svg>">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -175,14 +176,14 @@
                             <div class="highlight-icon">🌐</div>
                             <div class="highlight-content">
                                 <h4>Cross-Platform Web App</h4>
-                                <p>Works seamlessly on iOS, Android, and desktop browsers. No app store approval needed - instant deployment and updates for maximum reach.</p>
+                                <p>Works seamlessly on iOS and Android. No app store approval needed - instant deployment and updates for maximum reach.</p>
                             </div>
                         </div>
                         <div class="highlight-item scroll-reveal stagger-3">
                             <div class="highlight-icon">🎯</div>
                             <div class="highlight-content">
                                 <h4>Precision GPS Technology</h4>
-                                <p>Military-grade location accuracy guides users to exact coordinates with real-time navigation, AR waypoints, and proximity detection.</p>
+                                <p>Location accuracy guides users to exact coordinates with real-time navigation, AR waypoints, and proximity detection.</p>
                             </div>
                         </div>
                         <div class="highlight-item scroll-reveal stagger-4">
@@ -299,18 +300,18 @@
                 
                 <ul class="pricing-features">
                     <li>Fully branded custom AR web application</li>
-                    <li>Unlimited location pins & sponsor integrations</li>
+                    <li>Scalable location pins & sponsor integrations</li>
                     <li>Real-time analytics & performance dashboard</li>
-                    <li>Cross-platform compatibility (iOS, Android, Desktop)</li>
+                    <li>Cross-platform compatibility (iOS, Android)</li>
+                    <li>Desktop promotion site for campaigns (included)</li>
                     <li>Cloud hosting, security, & maintenance included</li>
                     <li>Client training & comprehensive support package</li>
                     <li>Campaign optimization tools & A/B testing</li>
                     <li>White-label deployment & customization</li>
                     <li>Advanced user engagement & retention features</li>
-                    <li>Integration with existing marketing platforms</li>
                 </ul>
                 
-                <a href="mailto:Andrew@ghost081280.com?subject=AR Marketing Investment Inquiry&body=I'm interested in the $7,500 AR marketing solution. Please send me detailed information about the development process and timeline." class="cta-primary">Start Your AR Empire Today</a>
+                <a href="mailto:Andrew@ghost081280.com?subject=AR Marketing Investment Inquiry&body=I'm interested in the $7,500 AR marketing solution. Please send me detailed information about the development process and timeline." class="cta-primary">Start Your AR Campaign Today</a>
             </div>
             
             <div class="revenue-model scroll-reveal">
@@ -357,8 +358,8 @@
                 <a href="mailto:Andrew@ghost081280.com?subject=AR Marketing Game Development Inquiry&body=I'm interested in developing a custom AR marketing game for my clients. Please send me detailed information about the development process, timeline, and how we can get started." class="cta-primary">
                     📧 Email Andrew Directly
                 </a>
-                <a href="tel:+19493574416" class="cta-secondary">
-                    📞 Call (949) 357-4416
+                <a href="sms:+19493574416&body=Hi Andrew, I'm interested in AR marketing games for my business. Can we set up a time to discuss?" class="cta-secondary">
+                    💬 Text (949) 357-4416
                 </a>
             </div>
             
@@ -613,16 +614,9 @@
             });
         });
 
-        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+        document.querySelectorAll('a[href^="sms:"]').forEach(link => {
             link.addEventListener('click', (e) => {
-                console.log('Phone CTA clicked:', link.href);
-                
-                // Show helpful message on desktop
-                if (window.innerWidth > 768) {
-                    setTimeout(() => {
-                        alert('On mobile devices, this will dial (949) 357-4416 directly. On desktop, please call this number manually.');
-                    }, 100);
-                }
+                console.log('SMS CTA clicked:', link.href);
             });
         });
 
